@@ -58,7 +58,7 @@ public class EmployeeDao {
     }
 
 
-    // 通过删除员工
+    // 通过id删除员工
     public void delete(Integer id){
         employees.remove(id);
     }
