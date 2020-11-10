@@ -43,14 +43,14 @@
 	</head>
 
 	<body>
-		<div th:insert="~{commons/commons::topbar}"></div>
+		<div th:replace="~{commons/commons::topbar}"></div>
 
 		<div class="container-fluid">
 			<div class="row">
-				<div th:insert="~{commons/commons::sidebar(active='list.html')}"></div>
+				<div th:replace="~{commons/commons::sidebar(active='list.html')}"></div>
 
 				<main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
-					<h2>添加员工</h2>
+					<h2><a class="btn btn-sm btn-success" th:href="@{/emp}">添加员工</a></h2>
 					<div class="table-responsive">
 						<table class="table table-striped table-sm">
 							<thead>
