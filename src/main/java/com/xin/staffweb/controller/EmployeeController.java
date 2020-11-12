@@ -58,4 +58,18 @@ public class EmployeeController {
         model.addAttribute("departments",departments);
         return "emp/update";
     }
+
+    //保存修改信息
+    @PostMapping("/updateEmp")
+    public String updateEmp(Employee employee){
+
+        employeeDao.save(employee);
+        return "redirect:/emps";
+    }
+    //删除员工信息
+    @GetMapping("/delemp/{id}")
+    public String delelteEmp(@PathVariable("id")Integer id){
+        employeeDao.delete(id);
+        return "redirect:/emps";
+    }
 }

@@ -26,7 +26,12 @@ public class LoginController {
         }else {
             // 告诉用户登录失败
             model.addAttribute("msg","用户名或密码错误，请重新输入");
-            return "index";
+            return "index.html";
         }
+    }
+    @RequestMapping("/user/logout")
+    public String logout(HttpSession session){
+        session.invalidate();
+        return "redirect:/index.html";
     }
 }
